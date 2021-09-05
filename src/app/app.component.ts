@@ -35,6 +35,9 @@ export class AppComponent {
 
   }
   download() {
+    this._ngxRichJsonCsvParserService.downloadFile(this.jsonData, [], true, 'sample file', 'mySl', HeaderSortMode.DESC, HeaderCaseMode.StartCase);
+
+
     const c = this._ngxRichJsonCsvParserService.ConvertToCSV(this.jsonData, [], true, 'mySl', HeaderSortMode.DESC, HeaderCaseMode.StartCase);
     console.log(c)
   }

@@ -58,22 +58,38 @@ this._ngxRichJsonCsvParserService.downloadFile(<Your JSON Data>,<Custom Header L
 ```
 #### Argument Details
 
-| Order 	|                    Name 	|                Type 	|                                                                                                                                                                                       Details 	|
-|------:	|------------------------:	|--------------------:	|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:	|
-|     1 	| JSON Data               	| An array of objects 	| JSON data which is used to convert into CSV                                                                                                                                                   	|
-|     2 	| Custom Header           	|  An array of String 	| You can provide custom csv header name, please note <br>number of element in this header array should be equal to <br>number of property in single JSON array object data                     	|
-|     3 	| IsGenerateSerial Number 	| Boolean             	| This flag is used to generate  Numerical serial number start from 1                                                                                                                           	|
-|     4 	| CSV File Name           	| string              	| Your custom CSV file name                                                                                                                                                                     	|
-|     5 	| Sort CSV Header list    	| enum                	| To sort CSV Header list, available options are<br>- without Sorting : HeaderSortMode.NONE<br>- to sort ascending order: HeaderSortMode.ASC<br>- to sort descending order: HeaderSortMode.DESC 	|
-|     6 	| Header Text format      	| enum                	| To format CSV all header text to uppercase or lowercase or capitalize or startcase(title case)<br>eg: HeaderCaseMode.StartCase                                                                	|
+| Order 	|                                        Name 	|                Type 	|                                                                                                                                                                                       Details 	|
+|------:	|--------------------------------------------:	|--------------------:	|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:	|
+|     1 	| JSON Data                                   	| An array of objects 	| JSON data which is used to convert into CSV                                                                                                                                                   	|
+|     2 	| Custom Header                               	| An array of String  	| You can provide custom csv header name, please note <br>number of element in this header array should be equal to <br>number of property in single JSON array object data                     	|
+|     3 	| isAutoGenerateSlNo(IsGenerateSerial Number) 	| Boolean             	| This flag is used to generate  Numerical serial number start from 1                                                                                                                           	|
+|     4 	| CSV File Name                               	| string              	| Your custom CSV file name                                                                                                                                                                     	|
+|     5 	| Serial Number header name                   	| string              	| If isAutoGenerateSlNo is true then you can provide custom header for Serial number                                                                                                            	|
+|     6 	| Sort CSV Header list                        	| enum                	| To sort CSV Header list, available options are<br>- without Sorting : HeaderSortMode.NONE<br>- to sort ascending order: HeaderSortMode.ASC<br>- to sort descending order: HeaderSortMode.DESC 	|
+|     7 	| Header Text format                          	| enum                	| To format CSV all header text to uppercase or lowercase or capitalize or startcase(title case)<br>eg: HeaderCaseMode.StartCase                                                                	|
 
 ```
-this._ngxRichJsonCsvParserService.downloadFile(jsonData, [], true, 'test', 'mySl', SortMode.DESC, HeaderCaseMode.StartCase);
+this._ngxRichJsonCsvParserService.downloadFile(jsonData, [], true, 'test', 'mySl', SortMode.DESC, HeaderCaseMode.StartCase); //example
 ```
 
 #### To convert JSON to CSV data format without downloading, use ConvertToCSV() function, eg:
 ```
 this._ngxRichJsonCsvParserService.ConvertToCSV(this.jsonData, [], true, 'mySl', HeaderSortMode.DESC, HeaderCaseMode.StartCase); // this function returns csv data
+```
+##### Argument details
+
+| Order 	|                     Name                    	|         Type        	|                                                                                            Details                                                                                            	|
+|:-----:	|:-------------------------------------------:	|:-------------------:	|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:	|
+|     1 	| JSON Data                                   	| An array of objects 	| JSON data which is used to convert into CSV                                                                                                                                                   	|
+|     2 	| Custom Header                               	| An array of String  	| You can provide custom csv header name, please note <br>number of element in this header array should be equal to <br>number of property in single JSON array object data                     	|
+|     3 	| isAutoGenerateSlNo(IsGenerateSerial Number) 	| Boolean             	| This flag is used to generate  Numerical serial number start from 1                                                                                                                           	|
+|     4 	| Serial Number header name                   	| string              	| If isAutoGenerateSlNo is true then you can provide custom header for Serial number                                                                                                            	|
+|     5 	| Sort CSV Header list                        	| enum                	| To sort CSV Header list, available options are<br>- without Sorting : HeaderSortMode.NONE<br>- to sort ascending order: HeaderSortMode.ASC<br>- to sort descending order: HeaderSortMode.DESC 	|
+|     6 	| Header Text format                          	| enum                	| To format CSV all header text to uppercase or lowercase or capitalize or startcase(title case)<br>eg: HeaderCaseMode.StartCase                                                                	|
+
+```
+const c = this._ngxRichJsonCsvParserService.ConvertToCSV(this.jsonData, [], true, 'mySl', HeaderSortMode.DESC, HeaderCaseMode.StartCase);
+console.log(c) //example
 ```
 
 ## Contributing

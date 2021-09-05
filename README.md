@@ -23,7 +23,7 @@ Next, you'll need to import the NgxRichJsonCsvParserModule module in your app's 
 
 ```ts
 
-import { NgxRichJsonCsvParserModule } from '@angular/flex-layout';
+import { NgxRichJsonCsvParserModule } from '@angular/';
 ...
 
 @NgModule({

@@ -23,7 +23,7 @@ Next, you'll need to import the NgxRichJsonCsvParserModule module in your app's 
 
 ```ts
 
-import { NgxRichJsonCsvParserModule } from '@angular/';
+import { NgxRichJsonCsvParserModule } from 'ngx-rich-json-csv-parser';
 ...
 
 @NgModule({
@@ -36,8 +36,7 @@ Next, To consume this library, create a instance of this library service in comp
 **csv-download-example.component.ts**
 ```ts
 import { Component } from '@angular/core';
-import { HeaderCaseMode, NgxRichJsonCsvParserService, SortMode } from 'projects/ngx-rich-json-csv-parser/src/public-api';
-
+import { HeaderCaseMode, HeaderSortMode, NgxRichJsonCsvParserService } from 'ngx-rich-json-csv-parser';
 ...
 
 export class CSVDownloadExampleComponent {
@@ -74,11 +73,11 @@ this._ngxRichJsonCsvParserService.downloadFile(jsonData, [], true, 'test', 'mySl
 
 #### To convert JSON to CSV data format without downloading, use ConvertToCSV() function, eg:
 ```
-this._ngxRichJsonCsvParserService.ConvertToCSV(this.jsonData, [], true, 'mySl', HeaderSortMode.DESC, HeaderCaseMode.StartCase);
+this._ngxRichJsonCsvParserService.ConvertToCSV(this.jsonData, [], true, 'mySl', HeaderSortMode.DESC, HeaderCaseMode.StartCase); // this function returns csv data
 ```
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
-MIT
+[MIT](https://github.com/geekwebcast/ng-rich-json-csv-parser/blob/master/LICENSE)

@@ -1,6 +1,18 @@
 import { Injectable } from '@angular/core';
 import { startCase, capitalize } from 'lodash';
 
+export enum HeaderCaseMode {
+  Default = 'Default',
+  UpperCase = 'Uppercase',
+  LowerCase = 'Lowercase',
+  Capitalize = 'Capitalize',
+  StartCase = 'StartCase'
+}
+export enum HeaderSortMode {
+  NONE = 'NONE',
+  ASC = 'ASC',
+  DESC = 'DESC'
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -42,7 +54,6 @@ export class NgxRichJsonCsvParserService {
     headerSortMode: HeaderSortMode = HeaderSortMode.NONE,
     headerCaseMode: HeaderCaseMode = HeaderCaseMode.Default) {
     let csvData = this.ConvertToCSV(jsonData, headerList, isAutoGenerateSlNo, slHeaderName, headerSortMode, headerCaseMode);
-    console.log(csvData)
     let blob = new Blob(['\ufeff' + csvData], { type: 'text/csv;charset=utf-8;' });
     let downloadLink = document.createElement("a");
     let url = URL.createObjectURL(blob);
@@ -78,20 +89,7 @@ export class NgxRichJsonCsvParserService {
     })
     csv.unshift(headerFields.join(',')) // add header column
     let csvData = csv.join('\r\n');
-    console.log(csvData);
     return csvData;
   }
 }
 
-export enum HeaderCaseMode {
-  Default = 'Default',
-  UpperCase = 'Uppercase',
-  LowerCase = 'Lowercase',
-  Capitalize = 'Capitalize',
-  StartCase = 'StartCase'
-}
-export enum HeaderSortMode {
-  NONE = 'NONE',
-  ASC = 'ASC',
-  DESC = 'DESC'
-}

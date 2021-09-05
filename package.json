@@ -1,6 +1,6 @@
 {
   "name": "ng-rich-json-csv-parser",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "convert JSON to CSV file and Download it in the .csv format for your Angular project",
   "license": "MIT",
   "homepage": "https://github.com/geekwebcast/ng-rich-json-csv-parser",

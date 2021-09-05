@@ -1,6 +1,40 @@
 {
   "name": "ng-rich-json-csv-parser",
   "version": "0.0.0",
+  "description": "convert JSON to CSV file and Download it in the .csv format for your Angular project",
+  "license": "MIT",
+  "homepage": "https://github.com/geekwebcast/ng-rich-json-csv-parser",
+  "author": {
+    "name": "Nandakumar R",
+    "url": "https://geekwebcast.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/geekwebcast/ng-rich-json-csv-parser"
+  },
+  "bugs": {
+    "url": "https://github.com/geekwebcast/ng-rich-json-csv-parser/issues"
+  },
+  "keywords": [
+    "csv",
+    "csv download",
+    "csv advaced option",
+    "angular2",
+    "to",
+    "json",
+    "csvtojson",
+    "converter",
+    "angular",
+    "json",
+    "parser",
+    "javascript",
+    "nodejs",
+    "node",
+    "npm",
+    "npm-package",
+    "npm-module",
+    "csv-parser"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

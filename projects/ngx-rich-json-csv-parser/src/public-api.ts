@@ -3,5 +3,4 @@
  */
 
 export * from './lib/ngx-rich-json-csv-parser.service';
-export * from './lib/ngx-rich-json-csv-parser.component';
 export * from './lib/ngx-rich-json-csv-parser.module';

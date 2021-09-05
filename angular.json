@@ -105,6 +105,37 @@
           }
         }
       }
+    },
+    "ngx-rich-json-csv-parser": {
+      "projectType": "library",
+      "root": "projects/ngx-rich-json-csv-parser",
+      "sourceRoot": "projects/ngx-rich-json-csv-parser/src",
+      "prefix": "ngrjcp",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-rich-json-csv-parser/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-rich-json-csv-parser/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-rich-json-csv-parser/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-rich-json-csv-parser/src/test.ts",
+            "tsConfig": "projects/ngx-rich-json-csv-parser/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-rich-json-csv-parser/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "ng-rich-json-csv-parser"

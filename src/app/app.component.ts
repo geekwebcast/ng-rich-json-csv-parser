@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HeaderCaseMode, HeaderSortMode, NgxRichJsonCsvParserService } from 'projects/ngx-rich-json-csv-parser/src/lib/ngx-rich-json-csv-parser.service';
 
 @Component({
   selector: 'nrjcp-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ng-rich-json-csv-parser';
+
+  jsonData = [];
+  constructor(private _ngxRichJsonCsvParserService: NgxRichJsonCsvParserService) {
+
+  }
+  download() {
+    this._ngxRichJsonCsvParserService.ConvertToCSV(this.jsonData, [], true, 'mySl', HeaderSortMode.DESC, HeaderCaseMode.StartCase);
+  }
 }

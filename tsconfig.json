@@ -11,6 +11,12 @@
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
+    "paths": {
+      "ngx-rich-json-csv-parser": [
+        "dist/ngx-rich-json-csv-parser/ngx-rich-json-csv-parser",
+        "dist/ngx-rich-json-csv-parser"
+      ]
+    },
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
